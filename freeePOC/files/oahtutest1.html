@@ -5,7 +5,7 @@
 &client_id=3MVG9YDQS5WtC11rOAJI.dCrM__xjpK8l.vH8pTONv4ICS_0EvJjHali6tHrJS1YXglW1_qvJ9cbrQcj82JLi&redirect_uri=https://&state=mystate">login</a>
 
 アクセストークンとリフレッシュトークンをゲット<BR>
-curl -v https://login.salesforce.com/services/oauth2/token -d "grant_type=authorization_code " -d "client_id=3MVG9YDQS5WtC11rOAJI.dCrM__xjpK8l.vH8pTONv4ICS_0EvJjHali6tHrJS1YXglW1_qvJ9cbrQcj82JLi" -d "client_secret=6665015134456256708" -d "redirect_uri=https://" -d "code=aPrxFYRxG6g7t8oBX6FqguMfdY8ar0wj7iN9753X8Io_xwsHdh.W3lCVsyLsLpIgKBdKH2_hAw%3D%3D" -H "X-PrettyPrint:1"
+curl -v https://login.salesforce.com/services/oauth2/token -d "grant_type=authorization_code " -d "client_id=3MVG9YDQS5WtC11rOAJI.dCrM__xjpK8l.vH8pTONv4ICS_0EvJjHali6tHrJS1YXglW1_qvJ9cbrQcj82JLi" -d "client_secret=6665015134456256708" -d "redirect_uri=https://" -d "code=aPrxFYRxG6g7t8oBX6FqguMfdXE8qfuuJcEfXrBtdqLhkbGqJSUDNt.WVckJFPdwgxsJgg0kTA%3D%3D" -H "X-PrettyPrint:1"
 <BR>
 <BR>
 レスポンス<BR>
@@ -13,12 +13,12 @@ curl -v https://login.salesforce.com/services/oauth2/token -d "grant_type=author
 <BF>
 
 更新トークンからアクセストークンをゲット
-curl -v https://login.salesforce.com/services/oauth2/token -d "grant_type=refresh_token  " -d "refresh_token=5Aep861..zRMyCurAUqXuPX5uJN1Yk7ghc6h4Cv1Cva6MR5Fea6Kw09iUBkDPFfTsjHDWuG27BEX3uzMP9l8PnW" -d "client_id=3MVG9YDQS5WtC11rOAJI.dCrM__xjpK8l.vH8pTONv4ICS_0EvJjHali6tHrJS1YXglW1_qvJ9cbrQcj82JLi" -H "X-PrettyPrint:1"
+curl -v https://login.salesforce.com/services/oauth2/token -d "grant_type=refresh_token  " -d "refresh_token=5Aep861..zRMyCurAUqXuPX5uJN1Yk7ghc6h4Cv7m6IPMhhMvMnGLaZQ50vyy9pnTWduXzDNyOtn.Fv.X7mciqj" -d "client_id=3MVG9YDQS5WtC11rOAJI.dCrM__xjpK8l.vH8pTONv4ICS_0EvJjHali6tHrJS1YXglW1_qvJ9cbrQcj82JLi" -H "X-PrettyPrint:1"
 レスポンス
 {"access_token":"00D6F000002Tjy4!AQgAQKxL1Mzvp1CFTwrQpUTzjerptgKrRWQ_Nm.Ctb7Oe5HoRArLyyv7G8R.ltRGODJ1_GFRJ72GMHiaqI72jXmMq0GU9_dS","signature":"XByq2OEpbhyQd6vIR6NU8GDmm1jljD/c3Bzam3DznZQ=","scope":"refresh_token api","instance_url":"https://ap4.salesforce.com","id":"https://login.salesforce.com/id/00D6F000002Tjy4UAC/0056F000009wqarQAA","token_type":"Bearer","issued_at":"1535808087379"}*
 
 アクセストークンをセットして実行<BR>
-curl https://ap4.salesforce.com/services/apexrest/Act/ -H "Authorization: Bearer "00D6F000002Tjy4!AQgAQKxL1Mzvp1CFTwrQpUTzjerptgKrRWQ_Nm.Ctb7Oe5HoRArLyyv7G8R.ltRGODJ1_GFRJ72GMHiaqI72jXmMq0GU9_dS" -H "X-PrettyPrint:1"
+curl https://ap4.salesforce.com/services/apexrest/Act/ -H "Authorization: Bearer 00D6F000002Tjy4!AQgAQJJNvwsPEstIuJUuBJGaYOFhEkFWbq62vlI2Rrjxilt2tLuZih3hVHv.5kez14pSlqagSK94R1seoSxcZKGdwl3AwBgH","signature":"hrFnLARWx9wjw5r9" -H "X-PrettyPrint:1"
 
 </body>
 
