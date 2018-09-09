@@ -20,7 +20,8 @@ public class SalesforceOAuthClient {
 		
 	public String getRefreshToken(String code){
 //		String s_url = "https://login.salesforce.com/services/oauth2/token?grant_type=authorization_code&client_id=3MVG9YDQS5WtC11rOAJI.dCrM__xjpK8l.vH8pTONv4ICS_0EvJjHali6tHrJS1YXglW1_qvJ9cbrQcj82JLi&client_secret=6665015134456256708&redirect_uri=https://localhost/RefreshTokenGetter&code=";
-		String s_url = "https://login.salesforce.com/services/oauth2/token?grant_type=authorization_code&client_id=3MVG9YDQS5WtC11rOAJI.dCrM__xjpK8l.vH8pTONv4ICS_0EvJjHali6tHrJS1YXglW1_qvJ9cbrQcj82JLi&client_secret=6665015134456256708&redirect_uri=https://&code=";
+//		String s_url = "https://login.salesforce.com/services/oauth2/token?grant_type=authorization_code&client_id=3MVG9YDQS5WtC11rOAJI.dCrM__xjpK8l.vH8pTONv4ICS_0EvJjHali6tHrJS1YXglW1_qvJ9cbrQcj82JLi&client_secret=6665015134456256708&redirect_uri=https://localhost:8443/freeePOC/RefreshTokenGetter&code=";
+		String s_url = "https://kmcustomercommunity-developer-edition.ap4.force.com/customerservice/services/oauth2/token?grant_type=authorization_code&client_id=3MVG9YDQS5WtC11rOAJI.dCrM__xjpK8l.vH8pTONv4ICS_0EvJjHali6tHrJS1YXglW1_qvJ9cbrQcj82JLi&client_secret=6665015134456256708&redirect_uri=https://localhost:8443/freeePOC/RefreshTokenGetter&code=";
 
 		s_url = s_url + code;
 
@@ -44,7 +45,8 @@ public class SalesforceOAuthClient {
 	
 	public String getAccessToken(String refresh_token) {
 		
-		String s_url = "https://login.salesforce.com/services/oauth2/token?grant_type=refresh_token&client_id=3MVG9YDQS5WtC11rOAJI.dCrM__xjpK8l.vH8pTONv4ICS_0EvJjHali6tHrJS1YXglW1_qvJ9cbrQcj82JLi&refresh_token=";
+//		String s_url = "https://login.salesforce.com/services/oauth2/token?grant_type=refresh_token&client_id=3MVG9YDQS5WtC11rOAJI.dCrM__xjpK8l.vH8pTONv4ICS_0EvJjHali6tHrJS1YXglW1_qvJ9cbrQcj82JLi&refresh_token=";
+		String s_url = "https://kmcustomercommunity-developer-edition.ap4.force.com/customerservice/services/oauth2/token?grant_type=refresh_token&client_id=3MVG9YDQS5WtC11rOAJI.dCrM__xjpK8l.vH8pTONv4ICS_0EvJjHali6tHrJS1YXglW1_qvJ9cbrQcj82JLi&refresh_token=";
 
 		s_url = s_url + refresh_token;
 		
@@ -70,12 +72,13 @@ public class SalesforceOAuthClient {
 	public String getAccounts(String access_token) {
 		String accountsJSON = "";
 		
-		String s_url = "https://ap4.salesforce.com/services/apexrest/Act/";
+//		String s_url = "https://ap4.salesforce.com/services/apexrest/Act/";
+		String s_url = "https://kmcustomercommunity-developer-edition.ap4.force.com/customerservice/services/apexrest/Act/";
 
 		openGETConnection(s_url);
 		con.setRequestProperty("Authorization", " Bearer " + access_token);
 		
-		sendRequest();
+		accountsJSON = sendRequest();
 		
 		return accountsJSON;
 	}
@@ -138,11 +141,22 @@ public class SalesforceOAuthClient {
 				inReader.close();
 				in.close();
 
-				System.out.println("Response JSON is " + json);
+
 
 			}else {
 				System.out.println("Error code : " + status);
 				System.out.println("Error message : " + con.getResponseMessage());
+
+				InputStream in = con.getInputStream();
+				String encoding = con.getContentEncoding();
+	            InputStreamReader inReader = new InputStreamReader(in, encoding);
+				BufferedReader bufReader = new BufferedReader(inReader);
+				System.out.println(bufReader.readLine());
+				bufReader.close();
+				inReader.close();
+				in.close();
+				
+				
 				return "";
 			}
 			
@@ -157,6 +171,7 @@ public class SalesforceOAuthClient {
 			e.printStackTrace();
 		}
 		
+		System.out.println("Response JSON is " + json);
 		
 		return json;
 

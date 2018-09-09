@@ -1,23 +1,22 @@
 <html>
 <body>
 
-<a href="https://login.salesforce.com/services/oauth2/authorize?response_type=code
-&client_id=3MVG9YDQS5WtC11rOAJI.dCrM__xjpK8l.vH8pTONv4ICS_0EvJjHali6tHrJS1YXglW1_qvJ9cbrQcj82JLi&redirect_uri=https://&state=mystate">login</a>
-
-ƒAƒNƒZƒXƒg[ƒNƒ“‚ÆƒŠƒtƒŒƒbƒVƒ…ƒg[ƒNƒ“‚ğƒQƒbƒg<BR>
+<a href="https://login.salesforce.com/services/oauth2/authorize?response_type=code&client_id=3MVG9YDQS5WtC11rOAJI.dCrM__xjpK8l.vH8pTONv4ICS_0EvJjHali6tHrJS1YXglW1_qvJ9cbrQcj82JLi&redirect_uri=https://localhost:8443/freeePOC/RefreshTokenGetter&state=mystate">Salesforce User login</a>
+<a href="https://kmcustomercommunity-developer-edition.ap4.force.com/customerservice/services/oauth2/authorize?response_type=code&client_id=3MVG9YDQS5WtC11rOAJI.dCrM__xjpK8l.vH8pTONv4ICS_0EvJjHali6tHrJS1YXglW1_qvJ9cbrQcj82JLi&redirect_uri=https://localhost:8443/freeePOC/RefreshTokenGetter&state=mystate">Customer Community login</a>
+ï¿½Aï¿½Nï¿½Zï¿½Xï¿½gï¿½[ï¿½Nï¿½ï¿½ï¿½Æƒï¿½ï¿½tï¿½ï¿½ï¿½bï¿½Vï¿½ï¿½ï¿½gï¿½[ï¿½Nï¿½ï¿½ï¿½ï¿½ï¿½Qï¿½bï¿½g<BR>
 curl -v https://login.salesforce.com/services/oauth2/token -d "grant_type=authorization_code " -d "client_id=3MVG9YDQS5WtC11rOAJI.dCrM__xjpK8l.vH8pTONv4ICS_0EvJjHali6tHrJS1YXglW1_qvJ9cbrQcj82JLi" -d "client_secret=6665015134456256708" -d "redirect_uri=https://" -d "code=aPrxFYRxG6g7t8oBX6FqguMfdXE8qfuuJcEfXrBtdqLhkbGqJSUDNt.WVckJFPdwgxsJgg0kTA%3D%3D" -H "X-PrettyPrint:1"
 <BR>
 <BR>
-ƒŒƒXƒ|ƒ“ƒX<BR>
+ï¿½ï¿½ï¿½Xï¿½|ï¿½ï¿½ï¿½X<BR>
 {"access_token":"00D6F000002Tjy4!AQgAQDomYnoUl.Uhy6U12sqQ5Hom84LPG5SDOnN0G_4qCrlP9C1Oz7.HYjn7P0e4Ih8MBIVYgriyyxQ0dV.7umX4Kb8qNpPF","refresh_token":"5Aep861..zRMyCurAUqXuPX5uJN1Yk7ghc6h4Cv1Cva6MR5Fea6Kw09iUBkDPFfTsjHDWuG27BEX3uzMP9l8PnW","signature":"2tKJ9cbGR1zEl4Vcszdad0jVqUqljfNXc1wQwOf/ktw=","scope":"refresh_token api","instance_url":"https://ap4.salesforce.com","id":"https://login.salesforce.com/id/00D6F000002Tjy4UAC/0056F000009wqarQAA","token_type":"Bearer","issued_at":"1535808035716"}
 <BF>
 
-XVƒg[ƒNƒ“‚©‚çƒAƒNƒZƒXƒg[ƒNƒ“‚ğƒQƒbƒg
+ï¿½Xï¿½Vï¿½gï¿½[ï¿½Nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½Nï¿½Zï¿½Xï¿½gï¿½[ï¿½Nï¿½ï¿½ï¿½ï¿½ï¿½Qï¿½bï¿½g
 curl -v https://login.salesforce.com/services/oauth2/token -d "grant_type=refresh_token  " -d "refresh_token=5Aep861..zRMyCurAUqXuPX5uJN1Yk7ghc6h4Cv7m6IPMhhMvMnGLaZQ50vyy9pnTWduXzDNyOtn.Fv.X7mciqj" -d "client_id=3MVG9YDQS5WtC11rOAJI.dCrM__xjpK8l.vH8pTONv4ICS_0EvJjHali6tHrJS1YXglW1_qvJ9cbrQcj82JLi" -H "X-PrettyPrint:1"
-ƒŒƒXƒ|ƒ“ƒX
+ï¿½ï¿½ï¿½Xï¿½|ï¿½ï¿½ï¿½X
 {"access_token":"00D6F000002Tjy4!AQgAQKxL1Mzvp1CFTwrQpUTzjerptgKrRWQ_Nm.Ctb7Oe5HoRArLyyv7G8R.ltRGODJ1_GFRJ72GMHiaqI72jXmMq0GU9_dS","signature":"XByq2OEpbhyQd6vIR6NU8GDmm1jljD/c3Bzam3DznZQ=","scope":"refresh_token api","instance_url":"https://ap4.salesforce.com","id":"https://login.salesforce.com/id/00D6F000002Tjy4UAC/0056F000009wqarQAA","token_type":"Bearer","issued_at":"1535808087379"}*
 
-ƒAƒNƒZƒXƒg[ƒNƒ“‚ğƒZƒbƒg‚µ‚ÄÀs<BR>
+ï¿½Aï¿½Nï¿½Zï¿½Xï¿½gï¿½[ï¿½Nï¿½ï¿½ï¿½ï¿½ï¿½Zï¿½bï¿½gï¿½ï¿½ï¿½Äï¿½ï¿½s<BR>
 curl https://ap4.salesforce.com/services/apexrest/Act/ -H "Authorization: Bearer 00D6F000002Tjy4!AQgAQJJNvwsPEstIuJUuBJGaYOFhEkFWbq62vlI2Rrjxilt2tLuZih3hVHv.5kez14pSlqagSK94R1seoSxcZKGdwl3AwBgH","signature":"hrFnLARWx9wjw5r9" -H "X-PrettyPrint:1"
 
 </body>

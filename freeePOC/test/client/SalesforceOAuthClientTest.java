@@ -32,7 +32,7 @@ public class SalesforceOAuthClientTest {
 	
 	@Test
 	public void getAccountsTest() {
-		String access_token = "00D6F000002Tjy4!AQgAQK9zwJVvIAe2jK0Gd1SAhMTh0GCfrNk7QKAoSqjmlXwR71qctjLAyH.3itQcVKbspfGOdgazIk7oSwWniS0wxmhUj0sB";
+		String access_token = "00D6F000002Tjy4!AQgAQMyw9pAcGsoKLTvrfRRICgxLjpcxREr.JvELo3BBNDog58rARvEW.PfdcyUP4x3rBHl.71DUa_hsDsVgq4KxWWgEBTEQ";
 		
 		SalesforceOAuthClient cli = new SalesforceOAuthClient();
 		String accounts = cli.getAccounts(access_token);
